@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\MobilController;
+use App\Http\Controllers\MotorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,5 +27,8 @@ Route::group(['middleware' => 'api','prefix' => 'auth'], function ($router) {
     Route::post('login', [AuthController::class, 'login']);
     Route::post('logout', [AuthController::class, 'logout']);
     Route::post('refresh', [AuthController::class, 'refresh']);
-    Route::post('me', [AuthController::class, 'me']);
+    Route::get('me', [AuthController::class, 'me']);
 });
+
+Route::get('mobil', [MobilController::class, 'index']);
+Route::get('motor', [MotorController::class, 'index']);
