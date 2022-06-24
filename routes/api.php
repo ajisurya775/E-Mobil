@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MobilController;
 use App\Http\Controllers\MotorController;
+use App\Http\Controllers\KendaraanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,3 +33,5 @@ Route::group(['middleware' => 'api','prefix' => 'auth'], function ($router) {
 
 Route::get('mobil', [MobilController::class, 'index']);
 Route::get('motor', [MotorController::class, 'index']);
+Route::get('penjualan-kendaraan', [KendaraanController::class, 'index']);
+Route::get('detail-penjualan', [KendaraanController::class, 'detail']);
